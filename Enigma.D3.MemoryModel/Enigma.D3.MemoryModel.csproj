@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92E7130D-9363-458C-ABE5-A71F240A9B78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Enigma.D3.MemoryModel</RootNamespace>
+    <AssemblyName>Enigma.D3.MemoryModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\SNODefinition.cs" />
+    <Compile Include="Assets\SNODiskEntry.cs" />
+    <Compile Include="Assets\SNOFiles.cs" />
+    <Compile Include="Assets\SNOGroupStorage.cs" />
+    <Compile Include="BattleNet\Hero.cs" />
+    <Compile Include="BattleNet\Map.cs" />
+    <Compile Include="Collections\CircularBuffer.cs" />
+    <Compile Include="Collections\Container.cs" />
+    <Compile Include="Collections\ExpandableContainer.cs" />
+    <Compile Include="Collections\LinkedList.cs" />
+    <Compile Include="Collections\Map.cs" />
+    <Compile Include="Collections\Vector.cs" />
+    <Compile Include="Controls\Control.cs" />
+    <Compile Include="Core\ACD.cs" />
+    <Compile Include="Core\ACDManager.cs" />
+    <Compile Include="Core\ActiveSkillSavedData.cs" />
+    <Compile Include="Core\Actor.cs" />
+    <Compile Include="Core\Animation.cs" />
+    <Compile Include="Core\AttributeReader.cs" />
+    <Compile Include="Core\FastAttrib.cs" />
+    <Compile Include="Core\FastAttribGroup.cs" />
+    <Compile Include="Core\FloatingNumber.cs" />
+    <Compile Include="Core\LevelArea.cs" />
+    <Compile Include="Core\LocalData.cs" />
+    <Compile Include="Core\ObjectManager.cs" />
+    <Compile Include="Core\Player.cs" />
+    <Compile Include="Core\PlayerData.cs" />
+    <Compile Include="Core\PlayerDataManager.cs" />
+    <Compile Include="Core\PlayerSavedData.cs" />
+    <Compile Include="Core\Quest.cs" />
+    <Compile Include="Core\QuestManager.cs" />
+    <Compile Include="Core\Scene.cs" />
+    <Compile Include="Core\TimedEvent.cs" />
+    <Compile Include="Core\Trickle.cs" />
+    <Compile Include="Core\TrickleManager.cs" />
+    <Compile Include="Core\UIID.cs" />
+    <Compile Include="Core\UIManager.cs" />
+    <Compile Include="Core\UIRect.cs" />
+    <Compile Include="Core\Waypoint.cs" />
+    <Compile Include="Core\WaypointManager.cs" />
+    <Compile Include="Core\World.cs" />
+    <Compile Include="ISegment.cs" />
+    <Compile Include="MemoryContext.cs" />
+    <Compile Include="MemoryManagement\Allocator.cs" />
+    <Compile Include="MemoryManagement\HeapNode.cs" />
+    <Compile Include="MemoryManagement\LocalHeap.cs" />
+    <Compile Include="MemoryManagement\MemoryManager.cs" />
+    <Compile Include="MemoryObjectExtensions.cs" />
+    <Compile Include="MemorySegment.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="Preferences\ChatPreferences.cs" />
+    <Compile Include="Preferences\GameplayPreferences.cs" />
+    <Compile Include="Preferences\Hotkey.cs" />
+    <Compile Include="Preferences\HotkeyPreferences.cs" />
+    <Compile Include="Preferences\KeyGesture.cs" />
+    <Compile Include="Preferences\SocialPreferences.cs" />
+    <Compile Include="Preferences\SoundPreferences.cs" />
+    <Compile Include="Preferences\VideoPreferences.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Segments\DataSegment.cs" />
+    <Compile Include="SymbolTable.cs" />
+    <Compile Include="SymbolTable.X64.cs" />
+    <Compile Include="SymbolTable.X86.cs" />
+    <Compile Include="TypeSystem\AttributeDescriptor.cs" />
+    <Compile Include="TypeSystem\FieldDescriptor.cs" />
+    <Compile Include="TypeSystem\SymbolDescriptor.cs" />
+    <Compile Include="TypeSystem\TagDescriptor.cs" />
+    <Compile Include="TypeSystem\ValueTypeDescriptor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enigma.D3.Assets\Enigma.D3.Assets.csproj">
+      <Project>{4B2BF057-3425-4520-8535-3372D330C653}</Project>
+      <Name>Enigma.D3.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enigma.D3.Core\Enigma.D3.Core.csproj">
+      <Project>{e01f9c34-f404-48dc-92e2-991da7adf9eb}</Project>
+      <Name>Enigma.D3.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enigma.Memory\Enigma.Memory.csproj">
+      <Project>{3A385F29-42E2-4CAF-B1F2-2A1A7B90A971}</Project>
+      <Name>Enigma.Memory</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
